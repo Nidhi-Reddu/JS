@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+    display: flex;
+    min-height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    border: 2px solid darkgreen;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    padding:20px;
+    background-color: lightgreen;
+}
+#hide{
+    display: none;
+}
+
+.img{
+    display: none;
+    width: 120px;
+    height: 150px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin : 0px auto 15px;
+}
+
+p{
+    color: rgb(16, 117, 30);
+}
