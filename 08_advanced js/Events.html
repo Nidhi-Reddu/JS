@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Programming in JS</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    <button id="clear">Clear</button>
+</body>
+<script>
+    // setTimeout(() => {
+    //     console.log("Hello World!")
+    // }, 2000);
+
+    const printer = setTimeout(() => {
+        const changer = document.querySelector('h1')
+        changer.innerHTML = `learning from best`
+    }, 2000);
+
+    const btn = document.querySelector('#stop')
+    btn.addEventListener('click',function(e){
+        clearTimeout(printer)
+        console.log("stopped!")
+    })
+    // function saydate(str){
+    //     console.log(str, new Date().toLocaleString())
+    // }
+    // setInterval(saydate, 2000, "hello")
+
+    function saydate(str){
+        console.log(str, new Date().toLocaleString())
+    }
+    let displaydate;
+    document.querySelector('#start').addEventListener('click', (e) => {
+        displaydate = setInterval(saydate, 1000, "hello")
+    })
+
+    document.querySelector('#clear').addEventListener('click', (e) => {
+        console.log("Interval Cleared!")
+        clearInterval(displaydate)
+    })
+
+</script>
+</html>
